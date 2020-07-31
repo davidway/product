@@ -1,0 +1,26 @@
+eureka:
+  client:
+    service-url :
+      default-Zone : http://localhost:8761/eureka/
+  instance:
+    hostname : product
+    # 是否显示ip,如果不设置那么就会显示主机名，默认false
+    prefer-ip-address: true
+spring:
+  application:
+    name: product
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1/SpringCloud_Sell?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+  jpa:
+    show-sql: true
+  cloud:
+    config:
+      discovery:
+        service-id: CONFIG
+      profile: dev
+server:
+  port: 8080
+
